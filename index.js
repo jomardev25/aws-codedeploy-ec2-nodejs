@@ -1,4 +1,5 @@
 const express = require("express");
+const process = require('process');
 const app = express();
 const PORT = 3000;
 
@@ -12,6 +13,12 @@ app.get('/health', (req, res)=>{
     res.status(200);
     res.setHeader("Content-Type", "application/json");
     res.send("OK");
+});
+
+app.get('/pid', (req, res)=>{
+    res.status(200);
+    res.setHeader("Content-Type", "application/json");
+    res.send(JSON.stringify({pid: process.pid}));
 });
 
 app.listen(PORT, (error) => {
