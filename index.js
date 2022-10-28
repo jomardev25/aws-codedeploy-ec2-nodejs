@@ -18,7 +18,7 @@ app.get('/health', (req, res)=>{
 app.get('/pid', (req, res)=>{
     res.status(200);
     res.setHeader("Content-Type", "application/json");
-    res.send(JSON.stringify({version: 2, pid: process.pid}));
+    res.send(JSON.stringify({version: 3, pid: process.pid}));
 });
 
 app.listen(PORT, (error) => {
